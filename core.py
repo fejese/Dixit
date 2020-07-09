@@ -162,6 +162,7 @@ class Game(object):
         self.order = []
         self.colours = dict()
         self.perma_banned = set()
+        self.hidden = False
 
         self.init_game()
         self.ping()
@@ -172,6 +173,10 @@ class Game(object):
         self.round = Round.make_zeroeth()
         self.turn = 0
         self.deck.reset()
+
+    def hide(self):
+        """Hides the game."""
+        self.hidden = True
 
     def ping(self):
         """Updates the game to appear currently active."""
